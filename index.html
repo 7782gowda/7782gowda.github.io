@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Personal Page with Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .about-me {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    .chatbot {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .chatbox {
+      height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #f9f9f9;
+    }
+    .chat-input {
+      width: 80%;
+      padding: 10px;
+    }
+    .chat-button {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="about-me">
+    <h1>Hi, I'm [Your Name]</h1>
+    <p><strong>Email:</strong> yourname@example.com</p>
+    <p><strong>Location:</strong> Your City, Country</p>
+    <p><strong>Bio:</strong> I'm an aspiring AI/ML developer with interests in building intelligent systems. I'm currently working on a chatbot that can answer questions about me!</p>
+  </div>
+
+  <div class="chatbot">
+    <h2>Ask Me Anything!</h2>
+    <div class="chatbox" id="chatbox">
+      <p><strong>Bot:</strong> Hello! Ask me something about [Your Name].</p>
+    </div>
+    <input class="chat-input" id="userInput" placeholder="Type your question..." />
+    <button class="chat-button" onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("userInput");
+      const chatbox = document.getElementById("chatbox");
+      const message = input.value;
+      if (!message) return;
+
+      // Display user message
+      chatbox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+      input.value = "";
+
+      // Placeholder bot reply (you’ll connect to backend later)
+      chatbox.innerHTML += `<p><strong>Bot:</strong> Thinking...</p>`;
+
+      // Call backend later here...
+    }
+  </script>
+
+</body>
+</html>
