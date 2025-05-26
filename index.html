@@ -2,81 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Page with Chatbot</title>
+  <title>Suprith M S – Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 2rem;
-      background-color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      margin: 0;
+      padding: 2rem;
+      color: #333;
     }
-    h1 {
-      color: #2c3e50;
+
+    .container {
+      max-width: 900px;
+      margin: auto;
     }
-    .about-me {
-      background-color: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    h1, h2 {
+      color: #00796b;
+    }
+
+    .about-me, .chatbot {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
       margin-bottom: 2rem;
     }
-    .chatbot {
-      background-color: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    .about-me p {
+      margin: 0.5rem 0;
+      font-size: 1.05rem;
     }
+
     .chatbox {
       height: 300px;
       overflow-y: auto;
       border: 1px solid #ccc;
       padding: 10px;
+      background-color: #f9f9f9;
       margin-bottom: 10px;
-      background: #f9f9f9;
+      border-radius: 8px;
     }
+
     .chat-input {
-      width: 80%;
+      width: 70%;
       padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
     }
+
     .chat-button {
-      padding: 10px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .chat-button:hover {
+      background-color: #004d40;
+    }
+
+    .resume-link {
+      margin-top: 10px;
+    }
+
+    .resume-link a {
+      text-decoration: none;
+      color: #00796b;
+      font-weight: bold;
+    }
+
+    .resume-link a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
-  <div class="about-me">
-    <h1>Hi, I'm [Your Name]</h1>
-    <p><strong>Email:</strong> yourname@example.com</p>
-    <p><strong>Location:</strong> Your City, Country</p>
-    <p><strong>Bio:</strong> I'm an aspiring AI/ML developer with interests in building intelligent systems. I'm currently working on a chatbot that can answer questions about me!</p>
-  </div>
-
-  <div class="chatbot">
-    <h2>Ask Me Anything!</h2>
-    <div class="chatbox" id="chatbox">
-      <p><strong>Bot:</strong> Hello! Ask me something about [Your Name].</p>
+  <div class="container">
+    <div class="about-me">
+      <h1>Hi, I'm Suprith M S</h1>
+      <p><strong>Email:</strong> <a href="mailto:suprithgowda7782@gmail.com">suprithgowda7782@gmail.com</a></p>
+      <p><strong>Phone:</strong> +91 7996135330</p>
+      <p><strong>Location:</strong> Nonavinakere, Tiptur, Karnataka</p>
+      <p><strong>LinkedIn:</strong> <a href="https://tinyurl.com/2z3wvz2z" target="_blank">LinkedIn Profile</a></p>
+      <p><strong>GitHub Projects:</strong> 
+        <ul>
+          <li><a href="https://github.com/7782gowda/studentloanproject.git" target="_blank">Student Loan Application</a></li>
+          <li><a href="https://github.com/7782gowda/image-steganography.git" target="_blank">Image Steganography</a></li>
+          <li><a href="https://github.com/7782gowda/Person-Loaction-Tracking-using-Face-Recognition.git" target="_blank">Person Location Tracking</a></li>
+        </ul>
+      </p>
+      <p><strong>Education:</strong> B.E. in Computer Science & Engineering, Govt. Engineering College Mosalehosahalli – 7.8 CGPA (2020–2024)</p>
+      <p><strong>Skills:</strong> Java, Python, C++, Web Dev (HTML, CSS, JS, PHP), MySQL, OpenCV, AI & Cloud</p>
+      <p><strong>Certifications:</strong> AI with Cloud, Ethical Hacking, Power BI, Web Dev</p>
+      <div class="resume-link">
+        <p><strong>Resume:</strong> <a href="suprith_resume.pdf" target="_blank">Download Resume (PDF)</a></p>
+      </div>
     </div>
-    <input class="chat-input" id="userInput" placeholder="Type your question..." />
-    <button class="chat-button" onclick="sendMessage()">Send</button>
+
+    <div class="chatbot">
+      <h2>Ask Me Anything!</h2>
+      <div class="chatbox" id="chatbox">
+        <p><strong>Bot:</strong> Hello! Ask me something about Suprith 😊</p>
+      </div>
+      <input class="chat-input" id="userInput" placeholder="Type your question..." />
+      <button class="chat-button" onclick="sendMessage()">Send</button>
+    </div>
   </div>
 
   <script>
-    async function sendMessage() {
+    function sendMessage() {
       const input = document.getElementById("userInput");
       const chatbox = document.getElementById("chatbox");
-      const message = input.value;
+      const message = input.value.trim();
       if (!message) return;
 
-      // Display user message
       chatbox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
       input.value = "";
 
-      // Placeholder bot reply (you’ll connect to backend later)
-      chatbox.innerHTML += `<p><strong>Bot:</strong> Thinking...</p>`;
-
-      // Call backend later here...
+      // Simple placeholder bot reply
+      setTimeout(() => {
+        chatbox.innerHTML += `<p><strong>Bot:</strong> That's interesting! Feel free to ask more about my skills or projects.</p>`;
+        chatbox.scrollTop = chatbox.scrollHeight;
+      }, 800);
     }
   </script>
-
 </body>
 </html>
