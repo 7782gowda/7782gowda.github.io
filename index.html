@@ -1,136 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Suprith M S – Portfolio</title>
   <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to right, #e0f7fa, #ffffff);
-      margin: 0;
-      padding: 2rem;
       color: #333;
+      line-height: 1.6;
     }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h1, h2 {
+    a {
       color: #00796b;
+      text-decoration: none;
     }
-
-    .about-me, .chatbot {
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
+    a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
       margin-bottom: 2rem;
     }
-
-    .about-me p {
-      margin: 0.5rem 0;
-      font-size: 1.05rem;
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
     }
-
-    .chatbox {
-      height: 300px;
-      overflow-y: auto;
-      border: 1px solid #ccc;
-      padding: 10px;
-      background-color: #f9f9f9;
-      margin-bottom: 10px;
-      border-radius: 8px;
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
-
-    .chat-input {
-      width: 70%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-
-    .chat-button {
-      padding: 10px 15px;
-      font-size: 1rem;
-      background-color: #00796b;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-
-    .chat-button:hover {
-      background-color: #004d40;
-    }
-
-    .resume-link {
-      margin-top: 10px;
-    }
-
-    .resume-link a {
-      text-decoration: none;
-      color: #00796b;
+    nav a {
       font-weight: bold;
     }
-
-    .resume-link a:hover {
-      text-decoration: underline;
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #00796b;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .project {
+      margin-bottom: 1rem;
+    }
+    .contact-info p {
+      margin: 0.5rem 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background-color: #f0f0f0;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="about-me">
-      <h1>Hi, I'm Suprith M S</h1>
-      <p><strong>Email:</strong> <a href="mailto:suprithgowda7782@gmail.com">suprithgowda7782@gmail.com</a></p>
-      <p><strong>Phone:</strong> +91 7996135330</p>
-      <p><strong>Location:</strong> Nonavinakere, Tiptur, Karnataka</p>
-      <p><strong>LinkedIn:</strong> <a href="https://tinyurl.com/2z3wvz2z" target="_blank">View Profile</a></p>
-      <p><strong>GitHub Projects:</strong>
-        <ul>
-          <li><a href="https://github.com/7782gowda/studentloanproject.git" target="_blank">Student Loan Application</a></li>
-          <li><a href="https://github.com/7782gowda/image-steganography.git" target="_blank">Image Steganography</a></li>
-          <li><a href="https://github.com/7782gowda/Person-Loaction-Tracking-using-Face-Recognition.git" target="_blank">Face Recognition Tracker</a></li>
-        </ul>
-      </p>
-      <p><strong>Education:</strong> B.E. in Computer Science & Engineering, Government Engineering College, Mosalehosahalli – 7.8 CGPA (2020–2024)</p>
-      <p><strong>Skills:</strong> Java, Python, C++, HTML, CSS, JavaScript, PHP, XML, MySQL, OpenCV, Power BI</p>
-      <p><strong>Certifications:</strong> AI with Cloud, Web Dev (Internshala), Power BI, Ethical Hacking</p>
-      <div class="resume-link">
-        <p><strong>Resume:</strong> <a href="suprith_resume.pdf" target="_blank">Download Resume (PDF)</a></p>
-      </div>
-    </div>
+    <header>
+      <img src="profile.jpg" alt="Suprith M S">
+      <h1>Suprith M S</h1>
+      <p>Aspiring AI/ML Developer | Web Enthusiast</p>
+    </header>
 
-    <div class="chatbot">
-      <h2>Ask Me Anything!</h2>
-      <div class="chatbox" id="chatbox">
-        <p><strong>Bot:</strong> Hello! Ask me something about Suprith 😊</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="suprith_resume.pdf" target="_blank">Resume</a>
+    </nav>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I'm an aspiring AI/ML developer with a keen interest in building intelligent systems. Currently pursuing my B.E. in Computer Science & Engineering at Government Engineering College, Mosalehosahalli, with a CGPA of 7.8 (2020–2024). I have a strong foundation in programming and a passion for continuous learning.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>Programming Languages</h3>
+          <ul>
+            <li>Java</li>
+            <li>Python</li>
+            <li>C++</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Web Technologies</h3>
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>PHP, XML</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Databases</h3>
+          <ul>
+            <li>MySQL</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools & Platforms</h3>
+          <ul>
+            <li>OpenCV</li>
+            <li>Power BI</li>
+          </ul>
+        </div>
       </div>
-      <input class="chat-input" id="userInput" placeholder="Type your question..." />
-      <button class="chat-button" onclick="sendMessage()">Send</button>
-    </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3><a href="https://github.com/7782gowda/studentloanproject.git" target="_blank">Student Loan Application</a></h3>
+        <p>Developed a comprehensive student loan application system to streamline the loan process for students.</p>
+      </div>
+      <div class="project">
+        <h3><a href="https://github.com/7782gowda/image-steganography.git" target="_blank">Image Steganography</a></h3>
+        <p>Implemented an image steganography tool to hide information within images securely.</p>
+      </div>
+      <div class="project">
+        <h3><a href="https://github.com/7782gowda/Person-Loaction-Tracking-using-Face-Recognition.git" target="_blank">Face Recognition Tracker</a></h3>
+        <p>Created a system to track individuals' locations using face recognition technology.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:suprithgowda7782@gmail.com">suprithgowda7782@gmail.com</a></p>
+        <p><strong>Phone:</strong> +91 7996135330</p>
+        <p><strong>Location:</strong> Nonavinakere, Tiptur, Karnataka</p>
+        <p><strong>LinkedIn:</strong> <a href="https://tinyurl.com/2z3wvz2z" target="_blank">View Profile</a></p>
+      </div>
+    </section>
   </div>
 
-  <script>
-    function sendMessage() {
-      const input = document.getElementById("userInput");
-      const chatbox = document.getElementById("chatbox");
-      const message = input.value.trim();
-      if (!message) return;
-
-      chatbox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
-      input.value = "";
-
-      // Basic simulated bot reply
-      setTimeout(() => {
-        chatbox.innerHTML += `<p><strong>Bot:</strong> That's a great question! Feel free to ask more about my skills or experience.</p>`;
-        chatbox.scrollTop = chatbox.scrollHeight;
-      }, 800);
-    }
-  </script>
+  <footer>
+    <p>&copy; 2025 Suprith M S. All rights reserved.</p>
+  </footer>
 </body>
 </html>
