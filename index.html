@@ -4,105 +4,133 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Suprith M S – Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Reset and Base Styles */
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #d0f0f8, #ffffff);
-      color: #333;
-      line-height: 1.6;
-    }
-    a {
-      color: #00796b;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f9ff;
+      color: #333;
+      padding: 20px;
     }
 
     header {
       text-align: center;
       margin-bottom: 2rem;
     }
+
     header img {
       width: 180px;
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      border: 4px solid white;
-      margin-bottom: 1rem;
+      border: 4px solid #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 2rem 0;
-      flex-wrap: wrap;
+    header img:hover {
+      transform: scale(1.05);
     }
-    nav a {
-      font-weight: bold;
-      font-size: 1.1rem;
+
+    h1 {
+      font-size: 2rem;
+      margin: 1rem 0 0.2rem;
+      color: #0077b6;
+    }
+
+    p.subtitle {
+      color: #555;
+      font-weight: 500;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: #0077b6;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #023e8a;
     }
 
     section {
-      margin-bottom: 2.5rem;
+      margin: 2rem auto;
+      max-width: 900px;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
     }
 
-    h1, h2 {
-      color: #00796b;
-    }
-
-    h2 {
-      border-bottom: 2px solid #00796b;
-      padding-bottom: 5px;
+    section h2 {
+      font-size: 1.5rem;
+      color: #023e8a;
       margin-bottom: 1rem;
+      border-bottom: 2px solid #90e0ef;
+      padding-bottom: 0.3rem;
     }
 
-    ul {
-      list-style-type: disc;
-      margin-left: 1.5rem;
-    }
-
-    .skills-grid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
     }
 
-    .project {
-      margin-bottom: 1.5rem;
+    .card {
+      background: #f0f8ff;
+      padding: 1rem;
+      border-radius: 10px;
+      transition: transform 0.3s;
     }
 
-    .contact-info p {
-      margin: 0.5rem 0;
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      color: #0077b6;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    .resume-button {
+      display: inline-block;
+      margin-top: 10px;
+      background: #0077b6;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .resume-button:hover {
+      background: #023e8a;
     }
 
     footer {
       text-align: center;
-      padding: 1rem 0;
-      background-color: #f0f0f0;
-      margin-top: 2rem;
+      margin-top: 3rem;
       font-size: 0.9rem;
+      color: #777;
     }
 
     @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
       header img {
         width: 140px;
         height: 140px;
@@ -111,114 +139,85 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="profile.jpg" alt="Suprith M S">
-      <h1>Suprith M S</h1>
-      <p>Aspiring AI/ML Developer | Fog Computing Enthusiast</p>
-    </header>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-      <a href="suprith_resume.pdf" target="_blank">Resume</a>
-    </nav>
+  <header>
+    <img src="profile.jpg" alt="Suprith M S">
+    <h1>Suprith M S</h1>
+    <p class="subtitle">AI/ML Developer | Fog Computing Researcher | M.Tech CSE @ SIT Tumkur</p>
+    <div class="social-icons">
+      <a href="mailto:suprithgowda7782@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/7782gowda" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://tinyurl.com/2z3wvz2z" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <a class="resume-button" href="suprith_resume.pdf" target="_blank">Download Resume</a>
+  </header>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I'm currently pursuing my M.Tech in Computer Science and Engineering at Siddaganga Institute of Technology, Tumkur (2024–2026) with a current SGPA of 9.43. I hold a B.E. in CSE and have hands-on experience in AI, web development, and system design. I’m passionate about building intelligent, cloud-connected systems and solving real-world interoperability challenges in IoT using technologies like BERT.</p>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm currently pursuing M.Tech in Computer Science & Engineering at Siddaganga Institute of Technology, Tumkur (2024–2026), with an SGPA of 9.43. I specialize in cloud-based AI systems, fog computing, and web development. I recently worked on a project solving IoT data interoperability issues using a BERT model deployed in a fog node. I am also passionate about building real-time, intelligent applications with full-stack and AI integration.</p>
+  </section>
 
-    <section id="skills">
-      <h2>Skills & Certifications</h2>
-      <div class="skills-grid">
-        <div>
-          <h3>Programming Languages</h3>
-          <ul>
-            <li>Java</li>
-            <li>Python</li>
-            <li>C++</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Web Technologies</h3>
-          <ul>
-            <li>HTML, CSS, JavaScript</li>
-            <li>PHP, XML</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Databases & Tools</h3>
-          <ul>
-            <li>MySQL, PostgreSQL</li>
-            <li>OpenCV, Power BI</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Certifications</h3>
-          <ul>
-            <li>AI with Cloud (Techsaksham)</li>
-            <li>Web Dev Training (Internshala)</li>
-            <li>Power BI for Data Analysis (_VOIS)</li>
-            <li>Ethical Hacking (Simplilearn)</li>
-          </ul>
-        </div>
+  <section id="skills">
+    <h2>Skills & Certifications</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Languages</h3>
+        <p>Java, Python, C++</p>
       </div>
-    </section>
+      <div class="card">
+        <h3>Web Development</h3>
+        <p>HTML, CSS, JavaScript, PHP, XML</p>
+      </div>
+      <div class="card">
+        <h3>Tools & Databases</h3>
+        <p>MySQL, PostgreSQL, OpenCV, Power BI</p>
+      </div>
+      <div class="card">
+        <h3>Certifications</h3>
+        <p>AI with Cloud (Techsaksham)<br> Web Dev (Internshala)<br> Power BI (_VOIS)<br> Ethical Hacking (Simplilearn)</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>AI-powered Interoperability in Fog Computing</h3>
-        <p>Developed a system to solve interoperability issues in fog computing for IoT using a fine-tuned BERT model. It standardizes diverse IoT data formats at the fog layer before sending them to the cloud, ensuring seamless integration and processing.</p>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Fog Computing BERT Project</h3>
+        <p>Built a BERT-powered fog node to standardize and forward IoT data for real-time semantic interoperability.</p>
       </div>
-      <div class="project">
-        <h3><a href="https://github.com/7782gowda/studentloanproject.git" target="_blank">Student Loan Application</a></h3>
-        <p>A full-stack web app for managing student loan applications using HTML, CSS, JS, PHP, and MySQL.</p>
+      <div class="card">
+        <h3><a href="https://github.com/7782gowda/studentloanproject.git" target="_blank">Student Loan App</a></h3>
+        <p>End-to-end web application using HTML, PHP, MySQL for managing student loans.</p>
       </div>
-      <div class="project">
+      <div class="card">
         <h3><a href="https://github.com/7782gowda/image-steganography.git" target="_blank">Image Steganography</a></h3>
-        <p>A Java-based application that hides secret messages inside images using steganographic techniques.</p>
+        <p>Java app for hiding messages in images using secure steganography techniques.</p>
       </div>
-      <div class="project">
+      <div class="card">
         <h3><a href="https://github.com/7782gowda/Person-Loaction-Tracking-using-Face-Recognition.git" target="_blank">Face Recognition Tracker</a></h3>
-        <p>Designed a real-time location tracking system using Python, OpenCV, and MySQL to detect and track individuals based on facial recognition.</p>
+        <p>Tracked people using facial recognition via Python, OpenCV, and MySQL.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li>
-          <strong>M.Tech – Computer Science and Engineering</strong><br>
-          Siddaganga Institute of Technology, Tumkur (2024–2026)<br>
-          Current SGPA: 9.43
-        </li>
-        <br>
-        <li>
-          <strong>B.E. – Computer Science and Engineering</strong><br>
-          Government Engineering College, Mosalehosahalli (2020–2024)<br>
-          CGPA: 7.8
-        </li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-info">
-        <p><strong>Email:</strong> <a href="mailto:suprithgowda7782@gmail.com">suprithgowda7782@gmail.com</a></p>
-        <p><strong>Phone:</strong> +91 7996135330</p>
-        <p><strong>Location:</strong> Nonavinakere, Tiptur, Karnataka</p>
-        <p><strong>LinkedIn:</strong> <a href="https://tinyurl.com/2z3wvz2z" target="_blank">View Profile</a></p>
+  <section id="education">
+    <h2>Education</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>M.Tech – CSE</h3>
+        <p>Siddaganga Institute of Technology, Tumkur<br>2024–2026<br>SGPA: 9.43</p>
       </div>
-    </section>
-  </div>
+      <div class="card">
+        <h3>B.E – CSE</h3>
+        <p>Govt. Engineering College, Mosalehosahalli<br>2020–2024<br>CGPA: 7.8</p>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Suprith M S. All rights reserved.</p>
+    <p>&copy; 2025 Suprith M S – Built with ❤️</p>
   </footer>
+
 </body>
 </html>
